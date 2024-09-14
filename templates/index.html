@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiling Form</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .checkbox-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Profile Information Form</h1>
+        <form action="/submit-profile" method="post" enctype="multipart/form-data">
+            <!-- Basic Information -->
+            <fieldset>
+                <legend>Basic Information</legend>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full_name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+            </fieldset>
+
+            <!-- Video Categories -->
+            <fieldset>
+                <legend>Favorite Video Categories</legend>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="categories" value="Comedy"> Comedy</label>
+                    <label><input type="checkbox" name="categories" value="Action"> Action</label>
+                    <label><input type="checkbox" name="categories" value="Entertainment"> Entertainment</label>
+                    <label><input type="checkbox" name="categories" value="Drama"> Drama</label>
+                    <label><input type="checkbox" name="categories" value="Documentary"> Documentary</label>
+                    <label><input type="checkbox" name="categories" value="Science Fiction"> Science Fiction</label>
+                    <label><input type="checkbox" name="categories" value="Romance"> Romance</label>
+                    <label><input type="checkbox" name="categories" value="Horror"> Horror</label>
+                    <label><input type="checkbox" name="categories" value="Education"> Education</label>
+                    <label><input type="checkbox" name="categories" value="Gaming"> Gaming</label>
+                    <label><input type="checkbox" name="categories" value="Lifestyle"> Lifestyle</label>
+                    <label><input type="checkbox" name="categories" value="Sports"> Sports</label>
+                    <label><input type="checkbox" name="categories" value="Music"> Music</label>
+                </div>
+            </fieldset>
+
+            <!-- Profession -->
+            <fieldset>
+                <legend>Profession</legend>
+                <div class="checkbox-group">   
+                    <label><input type="checkbox" name="profession" value="Student"> Student</label>
+                    <label><input type="checkbox" name="profession" value="Teacher"> Teacher</label>
+                </div>
+            </fieldset>
+
+            <!-- Additional Information -->
+            <fieldset>
+                <legend>Additional Information</legend>
+                <label for="profile-picture">Upload a Profile Picture (optional):</label>
+                <input type="file" id="profile-picture" name="profile_picture">
+
+                <label for="additional-comments">Additional Comments or Information:</label>
+                <textarea id="additional-comments" name="additional_comments"></textarea>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
